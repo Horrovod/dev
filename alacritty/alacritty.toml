@@ -1,0 +1,69 @@
+# Environment variables passed to the shell
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 10, y = 10 }
+decorations = "full"
+startup_mode = "Windowed"
+opacity = 0.9 
+blur = true
+dynamic_title = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+normal = { family = "Monofur Nerd Font", style = "Regular" }
+bold = { family = "Monofur Nerd Font", style = "Bold" }
+italic = { family = "Monofur Nerd Font", style = "Italic" }
+bold_italic = { family = "Monofur Nerd Font", style = "Bold Italic" }
+size = 32.0
+
+[cursor]
+# Style: Block, Underline, or Beam
+style = { shape = "Block", blinking = "On" }
+# Thickness (0.0 to 1.0)
+thickness = 0.15
+# Unfocused hollow cursor
+unfocused_hollow = true
+
+# Colors (Gruvbox Dark theme)
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.cursor]
+text = "#282828"
+cursor = "#ebdbb2"
+
+[colors.normal]
+black = "#282828"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#a89984"
+
+[colors.bright]
+black = "#928374"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+# Keyboard bindings
+[keyboard]
+bindings = [
+]
+
+# Mouse settings (hide cursor when typing)
+[mouse]
+hide_when_typing = true
+
