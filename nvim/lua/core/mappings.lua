@@ -4,6 +4,8 @@ vim.keymap.set('i', 'jj', '<ESC>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<Esc>', ':noh<CR>')
 
+vim.keymap.set('n', '<c-C>', 's-v')
+
 vim.keymap.set('n', '<c-K>', ':wincmd k <CR>')
 vim.keymap.set('n', '<c-J>', ':wincmd j <CR>')
 vim.keymap.set('n', '<c-H>', ':wincmd h <CR>')
