@@ -13,8 +13,12 @@ vim.opt.termguicolors = true
 
 --Fillchars
 vim.opt.fillchars = {
---	vert = "|",
+	--	vert = "|",
 	fold = " ",
 	eob = " "
 }
 
+
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
+vim.opt.undolevels = 10000

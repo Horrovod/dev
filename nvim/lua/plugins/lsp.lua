@@ -55,11 +55,11 @@ return {
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 				cmd = {
 					"clangd",
-					"--background-index",                                    -- Индексация в фоновом режиме
-					"--compile-commands-dir=.",                              -- Путь к compile_commands.json (можно указать, например, "./build")
+					"--background-index", -- Индексация в фоновом режиме
+					"--header-insertion=iwyu", -- Авто-добавление include
+					"--completion-style=detailed", -- Подробные автодополнения
+					"--compile-commands-dir=.",
 					"--fallback-style=webkit",
-					"--clang-tidy",                                          -- Включить clang-tidy для дополнительных проверок
-					"--completion-style=bundled",                            -- Стиль автодополнения
 				},
 				filetypes = { "c", "cpp", "objc", "objcpp" },                -- Поддерживаемые типы файлов
 				root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"), -- Где искать compile_commands.json
