@@ -1,13 +1,36 @@
 return {
 	{
 		'neovim/nvim-lspconfig',
+		dependencies = {
+			'hrsh7th/nvim-cmp',
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lsp-signature-help', -- Для постоянных подсказок сигнатур
+		},
 		config = function()
+			-- Настройка nvim-cmp
+			local cmp = require('cmp')
+			cmp.setup {
+				sources = cmp.config.sources({
+					{ name = 'nvim_lsp' },
+					{ name = 'nvim_lsp_signature_help', priority = 1000 }, -- Подсказки сигнатур
+				}),
+				mapping = {
+					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.abort(),
+					['<CR>'] = cmp.mapping.confirm({ select = true }),
+					['<C-n>'] = cmp.mapping.select_next_item(),
+					['<C-p>'] = cmp.mapping.select_prev_item(),
+				},
+				experimental = {
+					ghost_text = true, -- Показывать "призрачный" текст автодополнения
+				},
+			}
+
 			local lspconfig = require('lspconfig')
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 			-- Общие настройки для всех LSP
 			local on_attach = function(client, bufnr)
-				local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 				-- Маппинги для быстрых переходов
 				local opts = { buffer = bufnr, noremap = true, silent = true }
 				vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- Перейти к определению
@@ -17,7 +40,6 @@ return {
 				vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, opts) -- Показать подсказку
 				vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- Переименовать
 				vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts) -- Code actions
-				--        vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts) -- Показать диагностику
 				vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts) -- Предыдущая диагностика
 				vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- Следующая диагностика
 				vim.keymap.set('n', '<leader>b', '<C-o>', opts)      -- Вернуться назад
@@ -36,7 +58,7 @@ return {
 			-- Настройка lua_ls
 			lspconfig.lua_ls.setup {
 				on_attach = on_attach,
-				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -52,7 +74,7 @@ return {
 			-- Настройка clangd с поддержкой compile_commands.json
 			lspconfig.clangd.setup {
 				on_attach = on_attach,
-				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				capabilities = capabilities,
 				cmd = {
 					"clangd",
 					"--background-index", -- Индексация в фоновом режиме
