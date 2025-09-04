@@ -1,0 +1,90 @@
+--return {
+--	{
+--		'nvim-lualine/lualine.nvim',
+--		dependencies = { 'nvim-tree/nvim-web-devicons' },
+--		config = function()
+--			-- Создаем кастомную тему
+--			local custom_theme = {
+--				normal = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--				inactive = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--				insert = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--				visual = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--				replace = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--				command = {
+--					a = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					b = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					c = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					x = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					y = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--					z = { fg = '#5eacd3', bg = 'NONE', gui = 'NONE' },
+--				},
+--			}
+--
+--			require('lualine').setup({
+--				options = {
+--					theme = custom_theme,
+--					globalstatus = true,
+--					component_separators = '',
+--					section_separators = '',
+--					disabled_filetypes = {},
+--					refresh = {
+--						statusline = 1000,
+--						tabline = 1000,
+--						winbar = 1000,
+--					}
+--				},
+--				sections = {
+--					--					lualine_a = { 'mode' },
+--					lualine_b = { 'filename' },
+--					lualine_c = {},
+--					lualine_x = { 'diagnostics' },
+--					lualine_y = { 'progress' },
+--					lualine_z = { 'location' },
+--				},
+--				inactive_sections = {
+--					lualine_a = {},
+--					lualine_b = { 'filename' },
+--					lualine_c = {},
+--					lualine_x = {},
+--					lualine_y = {},
+--					lualine_z = { 'location' },
+--				},
+--			})
+--		end,
+--	}
+--}
