@@ -63,7 +63,27 @@ addToPath $HOME/.local/personal
 addToPath $HOME/.sst/bin
 addToPath $HOME/.npm-global/bin
 addToPathFront $HOME/.local/zig true # some how zig-0.13 just keeps getting added and i CANNOT find it anywhere
+setproxy() {
+    local proxy="${1:-http://127.0.0.1:7890}"
+    export http_proxy="$proxy"
+    export https_proxy="$proxy"
+    export ftp_proxy="$proxy"
+    export all_proxy="$proxy"
+    export HTTP_PROXY="$proxy"
+    export HTTPS_PROXY="$proxy"
+    export FTP_PROXY="$proxy"
+    export ALL_PROXY="$proxy"
+    export no_proxy="localhost,127.0.0.1,::1"
+    export NO_PROXY="$no_proxy"
+    echo "Proxy set to: $proxy"
+}
 
+unsetproxy() {
+    unset http_proxy https_proxy ftp_proxy all_proxy
+    unset HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY
+    unset no_proxy NO_PROXY
+    echo "Proxy unset"
+}
 # thanks gt
 alias gt='NODE_OPTIONS="--no-deprecation" gt'
 

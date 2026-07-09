@@ -1,0 +1,5 @@
+# runtime/private files that appear inside symlinked config dirs
+nvim/undo/
+zsh/.zsh_history
+pulse/
+waybar/scripts/*.log
