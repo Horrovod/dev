@@ -38,6 +38,8 @@ if [ -n "$PROXY" ]; then
   export HTTP_PROXY="$PROXY"
   export HTTPS_PROXY="$PROXY"
   export ALL_PROXY="$PROXY"
+  npm config set proxy "$PROXY"
+  npm config set https-proxy "$PROXY"
   echo "=> proxy: $PROXY"
 fi
 
